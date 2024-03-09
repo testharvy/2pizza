@@ -1,9 +1,9 @@
 import {PizzaProps} from "../../types";
-
+import styles from "./Pizza.module.css"
 
 export default function Pizza({pizzas, direction, index, setIndex}:PizzaProps){
     const currentPizza = pizzas[index]
-    const className = 'wrapper' + ' ' + (direction=='LEFT' ?  'left' : 'right');
+    const className = styles.wrapper + ' ' + (direction=='LEFT' ?  styles.left : styles.right);
 
     const showPrevButton = (index>0);
     const showNextButton = (index < pizzas.length - 1);
@@ -19,9 +19,9 @@ export default function Pizza({pizzas, direction, index, setIndex}:PizzaProps){
 
     return(
         <div className={className} style={{ backgroundImage: `url(${currentPizza.img})` }}>
-            { showPrevButton && <div className='prev' onClick={()=>goPrev()}> <span></span> </div> }
-            <div className='name'>{currentPizza.name} {halfPrice} руб.</div>
-            { showNextButton && <div className='next' onClick={()=>goNext()}> <span></span> </div>}
+            { showPrevButton && <div className={styles.prev} onClick={()=>goPrev()}> <span></span> </div> }
+            <div className={styles.name}>{currentPizza.name} {halfPrice} руб.</div>
+            { showNextButton && <div className={styles.next} onClick={()=>goNext()}> <span></span> </div>}
         </div>
     )
 }

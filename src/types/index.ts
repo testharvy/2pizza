@@ -18,3 +18,7 @@ export type PizzaProps = {
     index: number,
     setIndex: (number: number) => void
 }
+
+export type CardProps = {
+    list: IPizzaHalfs[],
+}

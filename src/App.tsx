@@ -1,8 +1,8 @@
 import './App.css';
 import {useState} from "react";
-
 import Pizza from "./components/Pizza/Pizza.tsx";
 import { IPizza, IPizzaHalfs } from "./types";
+import Card from "./components/Card/Card.tsx";
 
 const DATA:IPizza[] = [
     {'id':1, 'name': 'Пепперони', 'img': '/1.png', 'price': 550},
@@ -31,26 +31,21 @@ function App() {
             newPizza])
     }
 
-    const totalPrice = resultList.reduce((total, currentValue) => total = total + currentValue.price,0);
+
 
     return (
         <div className="App">
             <header className="header"><h2 className='title'>Ту Пицца</h2></header>
-            <div className="pizzas">
-                <Pizza pizzas={DATA} direction={'LEFT'} index={leftIndex} setIndex={setLeftIndex}></Pizza>
-                <Pizza pizzas={DATA}  direction={'RIGHT'} index={rightIndex} setIndex={setRightIndex}></Pizza>
-            </div>
-            <div className='result'>
-                <button onClick={handleAddPizza}>Добавить</button>
+            <div className="pizzas-wrapper">
+                <div className="pizzas">
+                    <Pizza pizzas={DATA} direction={'LEFT'} index={leftIndex} setIndex={setLeftIndex}></Pizza>
+                    <Pizza pizzas={DATA}  direction={'RIGHT'} index={rightIndex} setIndex={setRightIndex}></Pizza>
 
-                { resultList.length >0 &&
-                    <div className='results'>{resultList.map((pizza) =>
-                        <div className='resultRow'>{pizza.fullPizza? pizza.left : pizza.left +' + '+pizza.right} ({pizza.price} руб.)</div>)}
-                    </div>
-                }
-                <div>Общая цена: {totalPrice} руб.</div>
+                </div>
+                <button onClick={handleAddPizza} className='button'>Добавить</button>
             </div>
 
+            <Card list={resultList}></Card>
         </div>
     );
 }
