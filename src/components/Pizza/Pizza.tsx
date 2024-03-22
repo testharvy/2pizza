@@ -1,7 +1,14 @@
-import {PizzaProps} from "../../types";
+import {IPizza} from "../../types";
 import styles from "./Pizza.module.css"
 
-export default function Pizza({pizzas, direction, index, setIndex}:PizzaProps){
+export type Props = {
+    pizzas: IPizza[],
+    direction: "LEFT"|"RIGHT",
+    index: number,
+    setIndex: (number: number) => void
+}
+
+export default function Pizza({pizzas, direction, index, setIndex}:Props){
     const currentPizza = pizzas[index]
     const className = styles.wrapper + ' ' + (direction=='LEFT' ?  styles.left : styles.right);
 

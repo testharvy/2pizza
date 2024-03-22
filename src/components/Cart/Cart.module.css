@@ -1,0 +1,67 @@
+.button{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.logo{
+    width: 100%;
+    height: 100%;
+}
+.number{
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    background: #eeeeee;
+    color: black;
+    position: absolute;
+    bottom:  -5px;
+    left: -5px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+
+.shadow{
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup{
+    background: white;
+    width: 300px;
+    padding: 30px 10px;
+}
+.title{
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.results{
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+.resultRow{
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+.resultRow:last-child{
+    border-bottom: none;
+}
+.totalPrice{
+    margin-top: 10px;
+    text-align: center;
+}

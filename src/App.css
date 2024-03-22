@@ -1,41 +1,36 @@
-.App {
-  text-align: center;
-  width: 100vw;
+body{
+  margin: 0;
+  padding: 0;
 }
 .header{
+  width: 100vw;
+  height: 40px;
+  padding: 20px 0;
+  text-align: center;
   background: #eeeeee;
   margin-bottom: 50px;
 }
+.headerInner{
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
 .title{
   margin: 0;
+  line-height: 40px;
 }
 .pizzas-wrapper{
-  display: inline-flex;
+  display: block;
   flex-direction: column;
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
 }
 .pizzas{
   display: inline-flex;
   flex-direction: row;
   vertical-align: top;
   column-gap: 2px;
-}
-
-.result{
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 100px;
-}
-.results{
-  border: 1px solid black;
-  padding: 5px;
-  margin: 5px;
-}
-.resultRow{
-  padding: 5px;
-  border-bottom: 1px solid black;
-}
-.resultRow:last-child{
-  border-bottom: none;
 }
 .button{
   padding: 10px;

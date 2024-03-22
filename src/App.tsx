@@ -2,7 +2,7 @@ import './App.css';
 import {useState} from "react";
 import Pizza from "./components/Pizza/Pizza.tsx";
 import { IPizza, IPizzaHalfs } from "./types";
-import Card from "./components/Card/Card.tsx";
+import Cart from "./components/Cart/Cart.tsx";
 
 const DATA:IPizza[] = [
     {'id':1, 'name': 'Пепперони', 'img': '/1.png', 'price': 550},
@@ -32,20 +32,21 @@ function App() {
     }
 
 
-
     return (
         <div className="App">
-            <header className="header"><h2 className='title'>Ту Пицца</h2></header>
+            <header className="header">
+                <div className="headerInner">
+                    <h2 className='title'>Ту Пицца</h2>
+                    <Cart list={resultList}></Cart>
+                </div>
+            </header>
             <div className="pizzas-wrapper">
                 <div className="pizzas">
                     <Pizza pizzas={DATA} direction={'LEFT'} index={leftIndex} setIndex={setLeftIndex}></Pizza>
                     <Pizza pizzas={DATA}  direction={'RIGHT'} index={rightIndex} setIndex={setRightIndex}></Pizza>
-
                 </div>
                 <button onClick={handleAddPizza} className='button'>Добавить</button>
             </div>
-
-            <Card list={resultList}></Card>
         </div>
     );
 }

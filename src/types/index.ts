@@ -12,13 +12,8 @@ export interface IPizzaHalfs{
     'right': string
 }
 
-export type PizzaProps = {
-    pizzas: IPizza[],
-    direction: "LEFT"|"RIGHT",
-    index: number,
-    setIndex: (number: number) => void
-}
 
-export type CardProps = {
+
+export type CartProps = {
     list: IPizzaHalfs[],
 }
